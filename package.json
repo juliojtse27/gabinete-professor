@@ -1,0 +1,42 @@
+{
+  "name": "gabinete-professor",
+  "version": "1.0.0",
+  "description": "Gabinete do Professor — Gestão Pedagógica",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.0"
+  },
+  "build": {
+    "appId": "pt.gabinete.professor",
+    "productName": "Gabinete do Professor",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/.git/**",
+      "!dist/**",
+      "!node_modules/**/test/**",
+      "!node_modules/**/*.md"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}
